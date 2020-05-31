@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Genre /> should match Snapshot 1`] = `""`;
+
+exports[`<Genre /> should match Snapshot with  1`] = `
+"<Fragment>
+  <h2>
+    Drama
+  </h2>
+  <Row noGutters={false}>
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+  </Row>
+</Fragment>"
+`;
+
+exports[`<Genre /> should match Snapshot with more than 6 shows 1`] = `
+"<Fragment>
+  <h2>
+    Drama
+    <Link to={{...}}>
+                
+      <Badge pill={true} variant=\\"dark\\" style={{...}}>
+        See More
+      </Badge>
+    </Link>
+  </h2>
+  <Row noGutters={false}>
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+  </Row>
+</Fragment>"
+`;
+
+exports[`<Genre /> should match Snapshot with props 1`] = `
+"<Fragment>
+  <h2>
+    Drama
+  </h2>
+  <Row noGutters={false}>
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+  </Row>
+</Fragment>"
+`;

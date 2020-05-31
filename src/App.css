@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+.showCard {
+  border: 1px solid black;
+}
+
+.infoCard {
+  margin-top: 90px;
+  margin-bottom: 40px;
+  padding: 20px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.16);
+}
+
+.infoImage {
+  float: left;
+  margin-right: 10px;
+}
+
+.thumbnail {
+  margin-bottom: 10px;
+}
+
+.thumbnail a:hover{
+  text-decoration: none;
+}
+
+.thumbnail:hover {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+}
+
+.thumbnail-desc {
+  text-align: center;
+  color: black;
+}
+
+.thumbnail-desc:hover {
+  text-decoration: none;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
