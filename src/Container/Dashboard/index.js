@@ -11,10 +11,7 @@ class Dashboard extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get("http://api.tvmaze.com/shows")
-      .then((res) => this.setState({ shows: res.data }))
-      .catch((err) => console.log(err));
+    this.getAllShows();
   }
 
   getGenres = () => {
@@ -29,35 +26,39 @@ class Dashboard extends Component {
     return [...genres];
   };
 
-  searchApi = () => {
-    
+  searchApi = (value) => {
+    if(value !== ''){
+      axios
+        .get(`http://api.tvmaze.com/search/shows?q=${value}`)
+        .then((res) => {
+          const resultArray = res.data.map((showData) => showData.show);
+          this.setState({ shows: resultArray })
+          console.log(resultArray);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      this.getAllShows();
+    }
+  }
+
+  getAllShows = () => {
+    axios
+      .get("http://api.tvmaze.com/shows")
+      .then((res) => this.setState({ shows: res.data }))
+      .catch((err) => console.log(err));
   }
 
   inputSearch = (e) => {
     e.preventDefault();
     const searchValue = e.target.value;
     this.setState((state) => ({ ...state, searchValue}));
-    axios
-      .get(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
-      .then((res) => {
-        const resultArray = res.data.map((showData) => showData.show);
-        this.setState({ shows: resultArray })
-        console.log(resultArray);
-      })
-      .catch((err) => console.log(err));
+    this.searchApi(searchValue)
   };
 
   submitHandler = (e) => {
     e.preventDefault();
     const searchValue = this.state.searchValue;
-    axios
-      .get(`http://api.tvmaze.com/search/shows?q=${searchValue}`)
-      .then((res) => {
-        const resultArray = res.data.map((showData) => showData.show);
-        this.setState({ shows: resultArray })
-        console.log(resultArray);
-      })
-      .catch((err) => console.log(err));
+    this.searchApi(searchValue)
   }
 
   render() {
@@ -77,7 +78,7 @@ class Dashboard extends Component {
           />
         </form>
         {genres.length>0 ? genres.map((genre) => (
-          <Genre type={genre} shows={shows} />
+          <Genre type={genre} shows={shows} key={`Genre-${genre}`}/>
         )): <h2>No Shows Found</h2>}
       </Container>
     );
