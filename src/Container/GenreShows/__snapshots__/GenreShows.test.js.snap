@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GenreShows /> should match Snapshot 1`] = `
+"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
+  <span className=\\"sr-only\\">
+    Loading...
+  </span>
+</Spinner>"
+`;
+
+exports[`<GenreShows /> should match Snapshot without location prop and error response 1`] = `
+"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
+  <span className=\\"sr-only\\">
+    Loading...
+  </span>
+</Spinner>"
+`;
+
+exports[`<GenreShows /> should match Snapshot without location prop and success response 1`] = `
+"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
+  <span className=\\"sr-only\\">
+    Loading...
+  </span>
+</Spinner>"
+`;

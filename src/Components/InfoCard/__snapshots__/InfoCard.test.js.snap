@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InfoCard /> should match Snapshot 1`] = `
+"<div className=\\"infoCard\\">
+  <div>
+    <strong>
+      Rating: 
+    </strong>
+    <span>
+      6.5
+    </span>
+  </div>
+  <div>
+    <strong>
+      Country: 
+    </strong>
+    <span>
+      United States
+    </span>
+  </div>
+  <div>
+    <strong>
+      Show type: 
+    </strong>
+    <span>
+      Scripted
+    </span>
+  </div>
+  <div>
+    <strong>
+      Genres: 
+    </strong>
+    <span>
+      Drama, Science-Fiction, Thriller
+    </span>
+  </div>
+  <div>
+    <strong>
+      Schedule: 
+    </strong>
+    <span>
+      Thursday
+       at 
+      22:00
+       (
+      60
+       mins)
+    </span>
+  </div>
+  <div>
+    <strong>
+      Official Site: 
+    </strong>
+    <span>
+      <a href=\\"http://www.cbs.com/shows/under-the-dome/\\" target=\\"blank\\">
+        http://www.cbs.com/shows/under-the-dome/
+      </a>
+    </span>
+  </div>
+</div>"
+`;

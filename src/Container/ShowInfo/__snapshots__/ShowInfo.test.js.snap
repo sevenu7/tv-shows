@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShowInfo /> should match Snapshot 1`] = `
+"<Container fluid={false}>
+  <Row noGutters={false}>
+    <Col sm={12} md={8} lg={8} xl={8}>
+      <h2>
+        Under the Dome
+      </h2>
+      <img className=\\"infoImage\\" src=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" alt=\\"Under the Dome\\" />
+      <DangerouslySetHtmlContent html=\\"<p><b>Under the Dome</b> is the story of a small town that is suddenly and inexplicably sealed off from the rest of the world by an enormous transparent dome. The town\\\\'s inhabitants must deal with surviving the post-apocalyptic conditions while searching for answers about the dome, where it came from and if and when it will go away.</p>\\" />
+    </Col>
+    <Col sm={12} md={4} lg={4} xl={4}>
+      <InfoCard show={{...}} />
+    </Col>
+  </Row>
+</Container>"
+`;
+
+exports[`<ShowInfo /> should match Snapshot without location prop and error response 1`] = `
+"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
+  <span className=\\"sr-only\\">
+    Loading...
+  </span>
+</Spinner>"
+`;
+
+exports[`<ShowInfo /> should match Snapshot without location prop and success response 1`] = `
+"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
+  <span className=\\"sr-only\\">
+    Loading...
+  </span>
+</Spinner>"
+`;
