@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link should match Snapshot 1`] = `
+"<Switch>
+  <Route path=\\"/genre/:id\\" exact={true} component={[function]} />
+  <Route path=\\"/show/:id\\" exact={true} component={[function]} />
+  <Route path=\\"/\\" exact={true} component={[function]} />
+</Switch>"
+`;

@@ -1,25 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GenreShows /> should match Snapshot 1`] = `
-"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
-  <span className=\\"sr-only\\">
-    Loading...
-  </span>
-</Spinner>"
+"<Container fluid={false}>
+  <h1>
+    Drama
+  </h1>
+  <Row noGutters={false}>
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"no-img-portrait-text.png\\" name=\\"Under the Dome\\" show={{...}} />
+  </Row>
+  <Button variant=\\"dark\\" onClick={[Function]} active={false} disabled={false} type=\\"button\\">
+    Back
+  </Button>
+</Container>"
 `;
 
 exports[`<GenreShows /> should match Snapshot without location prop and error response 1`] = `
-"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
-  <span className=\\"sr-only\\">
-    Loading...
-  </span>
-</Spinner>"
+"<Container fluid={false}>
+  <h1>
+    Drama
+  </h1>
+  <Row noGutters={false}>
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"no-img-portrait-text.png\\" name=\\"Under the Dome\\" show={{...}} />
+  </Row>
+  <Button variant=\\"dark\\" onClick={[Function]} active={false} disabled={false} type=\\"button\\">
+    Back
+  </Button>
+</Container>"
 `;
 
 exports[`<GenreShows /> should match Snapshot without location prop and success response 1`] = `
-"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
-  <span className=\\"sr-only\\">
-    Loading...
-  </span>
-</Spinner>"
+"<Container fluid={false}>
+  <h1>
+    Drama
+  </h1>
+  <Row noGutters={false}>
+    <Show image=\\"http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg\\" name=\\"Under the Dome\\" show={{...}} />
+    <Show image=\\"no-img-portrait-text.png\\" name=\\"Under the Dome\\" show={{...}} />
+  </Row>
+  <Button variant=\\"dark\\" onClick={[Function]} active={false} disabled={false} type=\\"button\\">
+    Back
+  </Button>
+</Container>"
 `;

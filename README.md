@@ -1,8 +1,16 @@
+# Popular Tv Shows Application with ReactJS
+A single‐page web application which allows users to get and search all the popular Tv Shows. It uses the following open api: http://www.tvmaze.com/api
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+This will install all the required npm packages for the project to run.
 
 ### `npm start`
 

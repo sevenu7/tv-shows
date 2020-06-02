@@ -3,11 +3,13 @@ import React, { Component } from "react";
 import Genre from "../../Components/Genre/Index";
 import { Container } from "react-bootstrap";
 import { fetchAllShows, searchShows } from "../../services";
+import { title, noShows, errMsg, siteDescription } from "../../constants";
 
 class Dashboard extends Component {
   state = {
     shows: null,
     searchValue: "",
+    error: false,
   };
 
   componentDidMount() {
@@ -16,7 +18,6 @@ class Dashboard extends Component {
 
   getGenres = () => {
     const { shows } = this.state;
-    console.log(shows);
     let genres = new Set();
     if (shows) {
       for (let i = 0; i < shows.length; i += 1) {
@@ -31,10 +32,9 @@ class Dashboard extends Component {
       searchShows(value)
         .then((res) => {
           const resultArray = res.data.map((showData) => showData.show);
-          this.setState({ shows: resultArray });
-          console.log(resultArray);
+          this.setState({ shows: resultArray, error: false });
         })
-        .catch((err) => console.log(err));
+        .catch(() => this.setState({ error: true }));
     } else {
       this.getAllShows();
     }
@@ -42,8 +42,8 @@ class Dashboard extends Component {
 
   getAllShows = () => {
     fetchAllShows()
-      .then((res) => this.setState({ shows: res.data }))
-      .catch((err) => console.log(err));
+      .then((res) => this.setState({ shows: res.data, error: false }))
+      .catch(() => this.setState({ error: true }));
   };
 
   inputSearch = (e) => {
@@ -60,19 +60,23 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { shows, searchValue } = this.state;
+    const { shows, searchValue, error } = this.state;
     // console.log(this.state.shows);
     const genres = this.getGenres();
     return (
       <Container>
-        <h1>Popular TV Shows</h1>
-        <form onSubmit={this.submitHandler}>
+        <div className="header">
+          <h1>{title}</h1>
+          <p className="desc">{siteDescription}</p>
+        </div>
+        <form onSubmit={this.submitHandler} className="middle">
           <input
             type="text"
             name="search"
             placeholder="Search.."
             value={searchValue}
             onChange={this.inputSearch}
+            className="searchField"
           />
         </form>
         {genres.length > 0 ? (
@@ -80,7 +84,7 @@ class Dashboard extends Component {
             <Genre type={genre} shows={shows} key={`Genre-${genre}`} />
           ))
         ) : (
-          <h2>No Shows Found</h2>
+          <h2>{error ? errMsg : noShows}</h2>
         )}
       </Container>
     );
