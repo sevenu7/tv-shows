@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import InnerHtml from "dangerously-set-html-content";
-
+import dummyImage from "../../assets/no-img-portrait-text.png";
 import InfoCard from "../../Components/InfoCard";
-// import axios from "axios";
 import { fetchShow } from "../../services";
 
 class ShowInfo extends Component {
@@ -13,18 +12,16 @@ class ShowInfo extends Component {
 
   componentDidMount() {
     const { show } = this.state;
-    console.log(this.props.location);
     const id = this.props.match.params.id;
     if (!show) {
       fetchShow(id)
         .then((res) => this.setState({ show: res.data }))
-        .catch((err) => console.log(err));
+        .catch(() => this.setState({ error: true }));
     }
   }
 
   render() {
     const { show } = this.state;
-    console.log(show);
     return show ? (
       <Container>
         <Row>
@@ -32,7 +29,7 @@ class ShowInfo extends Component {
             <h2>{show.name}</h2>
             <img
               className="infoImage"
-              src={show.image.medium}
+              src={show.image ? show.image.medium : dummyImage}
               alt={show.name}
             />
             <InnerHtml html={show.summary} />

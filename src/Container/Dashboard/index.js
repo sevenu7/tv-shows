@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Genre from "../../Components/Genre/Index";
 import { Container } from "react-bootstrap";
 import { fetchAllShows, searchShows } from "../../services";
-import { title, noShows, errMsg, siteDescription } from "../../constants";
+import { TITLE, NO_SHOWS, ERR_MSG, SITE_DESCRIPTION } from "../../constants";
 
 class Dashboard extends Component {
   state = {
@@ -20,9 +20,9 @@ class Dashboard extends Component {
     const { shows } = this.state;
     let genres = new Set();
     if (shows) {
-      for (let i = 0; i < shows.length; i += 1) {
-        genres.add(...shows[i].genres);
-      }
+      shows.forEach((show) => {
+        genres.add(...show.genres);
+      });
     }
     return [...genres];
   };
@@ -61,13 +61,12 @@ class Dashboard extends Component {
 
   render() {
     const { shows, searchValue, error } = this.state;
-    // console.log(this.state.shows);
     const genres = this.getGenres();
     return (
       <Container>
         <div className="header">
-          <h1>{title}</h1>
-          <p className="desc">{siteDescription}</p>
+          <h1>{TITLE}</h1>
+          <p className="desc">{SITE_DESCRIPTION}</p>
         </div>
         <form onSubmit={this.submitHandler} className="middle">
           <input
@@ -84,7 +83,7 @@ class Dashboard extends Component {
             <Genre type={genre} shows={shows} key={`Genre-${genre}`} />
           ))
         ) : (
-          <h2>{error ? errMsg : noShows}</h2>
+          <h2>{error ? ERR_MSG : NO_SHOWS}</h2>
         )}
       </Container>
     );

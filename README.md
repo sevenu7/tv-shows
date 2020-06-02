@@ -20,10 +20,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm test .`
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+We can get the test coverage from the 'coverage' folder which will be created after running the 'npm test .' command.
+You can open coverage->Icov-report->index.html in the browser to get the coverage.
 
 ### `npm run build`
 
@@ -74,3 +77,36 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Project Guidelines ------------
+
+1) Method Naming Convention, variable, object declaration and other utility functions : camelCase
+   Example : services, getAllShows(), data etc..
+
+2) Folder Naming Convention, Components in React : PascalCase
+   Example : GenreShows, InfoCard
+
+### Project dependencies and devDependencies ------------
+1. axios:
+   Promise based HTTP client for the browser.
+   Please refer below url for more details:
+   https://www.npmjs.com/package/axios   
+
+2. bootstrap and react-bootstrap:
+   With react-bootstrap we can build responsive and mobile-first projects on the web using ReactJs and the world's most popular front-end CSS library — Bootstrap v4.
+   Please refer below url for more details:
+   https://react-bootstrap.github.io/
+
+3. dangerously-set-html-content:
+   Used to render raw html from string.
+   Please refer below url for more details:
+   https://www.npmjs.com/package/dangerously-set-html-content
+
+4. jest and enzyme:
+   Run unit tests with Jest. Jest as a JS unit testing framework and runner.
+   Please refer below url for more details on jest:
+   https://jestjs.io/
+   
+   Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output.
+   Please refer below for more details on enzyme:
+   https://www.npmjs.com/package/enzyme

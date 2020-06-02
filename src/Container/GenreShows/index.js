@@ -13,7 +13,6 @@ class GenreShows extends Component {
 
   componentDidMount() {
     const { shows } = this.state;
-    // console.log(this.props.location)
     const type = this.props.match.params.id;
     if (!shows) {
       fetchAllShows()
@@ -24,7 +23,7 @@ class GenreShows extends Component {
           filteredShows.sort((a, b) => b.rating.average - a.rating.average);
           this.setState({ shows: filteredShows });
         })
-        .catch((err) => console.log(err));
+        .catch(() => this.setState({ error: true }));
     }
   }
 
