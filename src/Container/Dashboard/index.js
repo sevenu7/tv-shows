@@ -16,6 +16,7 @@ class Dashboard extends Component {
     this.getAllShows();
   }
 
+  // getGenres will get all the unique genres available
   getGenres = () => {
     const { shows } = this.state;
     let genres = new Set();
@@ -27,6 +28,7 @@ class Dashboard extends Component {
     return [...genres];
   };
 
+  // searchApi method searches for the shows with search value given and sets them in the state
   searchApi = (value) => {
     if (value !== "") {
       searchShows(value)
@@ -40,12 +42,14 @@ class Dashboard extends Component {
     }
   };
 
+  // getAllShows method fetches all the available shows in the API
   getAllShows = () => {
     fetchAllShows()
       .then((res) => this.setState({ shows: res.data, error: false }))
       .catch(() => this.setState({ error: true }));
   };
 
+  // inputSearch method sets searchValue in state and calls searchApi method with input value of the user
   inputSearch = (e) => {
     e.preventDefault();
     const searchValue = e.target.value;
@@ -53,6 +57,7 @@ class Dashboard extends Component {
     this.searchApi(searchValue);
   };
 
+  // submitHandler method calls searchApi with searchValue 
   submitHandler = (e) => {
     e.preventDefault();
     const searchValue = this.state.searchValue;

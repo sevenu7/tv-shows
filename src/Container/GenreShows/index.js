@@ -27,6 +27,7 @@ class GenreShows extends Component {
     }
   }
 
+  // onBack method returns the user to previous page
   onBack = () => {
     this.setState({ back: true });
   };

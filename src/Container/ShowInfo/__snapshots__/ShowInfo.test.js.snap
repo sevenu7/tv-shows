@@ -18,17 +18,31 @@ exports[`<ShowInfo /> should match Snapshot 1`] = `
 `;
 
 exports[`<ShowInfo /> should match Snapshot without location prop and error response 1`] = `
-"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
-  <span className=\\"sr-only\\">
-    Loading...
-  </span>
-</Spinner>"
+"<Container fluid={false}>
+  <Row noGutters={false}>
+    <Col sm={12} md={8} lg={8} xl={8}>
+      <h2 />
+      <img className=\\"infoImage\\" src=\\"no-img-portrait-text.png\\" alt={[undefined]} />
+      <DangerouslySetHtmlContent html={[undefined]} />
+    </Col>
+    <Col sm={12} md={4} lg={4} xl={4}>
+      <InfoCard show=\\"test\\" />
+    </Col>
+  </Row>
+</Container>"
 `;
 
 exports[`<ShowInfo /> should match Snapshot without location prop and success response 1`] = `
-"<Spinner className=\\"spinner\\" animation=\\"border\\" role=\\"status\\">
-  <span className=\\"sr-only\\">
-    Loading...
-  </span>
-</Spinner>"
+"<Container fluid={false}>
+  <Row noGutters={false}>
+    <Col sm={12} md={8} lg={8} xl={8}>
+      <h2 />
+      <img className=\\"infoImage\\" src=\\"no-img-portrait-text.png\\" alt={[undefined]} />
+      <DangerouslySetHtmlContent html={[undefined]} />
+    </Col>
+    <Col sm={12} md={4} lg={4} xl={4}>
+      <InfoCard show=\\"test\\" />
+    </Col>
+  </Row>
+</Container>"
 `;
