@@ -51,7 +51,7 @@ class GenreShows extends Component {
         <Button variant="dark" onClick={this.onBack}>
           Back
         </Button>
-        {back ? <Redirect to="/" /> : null}
+        {back ? <Redirect to="/tv-shows" /> : null}
       </Container>
     ) : (
       <Spinner className="spinner" animation="border" role="status">

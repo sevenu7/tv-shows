@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.tvmaze.com';
+export const BASE_URL = 'https://api.tvmaze.com';
 export const TITLE = 'Popular TV Shows';
 export const ERR_MSG = 'Oops.. An error occured.';
 export const NO_SHOWS = 'No Shows Found';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './Container/Dashboard/index';
@@ -13,7 +13,8 @@ class App extends Component {
       < Switch >
         <Route path="/genre/:id" exact component={GenreShows} />
         <Route path="/show/:id" exact component={ShowInfo} />
-        <Route path="/" exact component={Dashboard} />
+        <Route path="/tv-shows" exact component={Dashboard} />
+        <Redirect to="/tv-shows" />
       </Switch >
     );
   }
