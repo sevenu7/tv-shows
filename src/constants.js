@@ -11,3 +11,4 @@ export const GENRES = 'Genres: ';
 export const SCHEDULE = 'Schedule: ';
 export const OFFICIAL_SITE = 'Official Site: ';
 export const NA = 'NA';
+export const LOADING = 'Loading...';

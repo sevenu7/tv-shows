@@ -3,10 +3,11 @@ import React, { Component } from "react";
 import Genre from "../../Components/Genre/Index";
 import { Container } from "react-bootstrap";
 import { fetchAllShows, searchShows } from "../../services";
-import { TITLE, NO_SHOWS, ERR_MSG, SITE_DESCRIPTION } from "../../constants";
+import { TITLE, NO_SHOWS, ERR_MSG, SITE_DESCRIPTION, LOADING } from "../../constants";
 
 class Dashboard extends Component {
   state = {
+    loading: false,
     shows: null,
     searchValue: "",
     error: false,
@@ -44,9 +45,11 @@ class Dashboard extends Component {
 
   // getAllShows method fetches all the available shows in the API
   getAllShows = () => {
+    this.setState({loading: true});
     fetchAllShows()
       .then((res) => this.setState({ shows: res.data, error: false }))
-      .catch(() => this.setState({ error: true }));
+      .catch(() => this.setState({ error: true }))
+      .finally(this.setState({loading:false}));
   };
 
   // inputSearch method sets searchValue in state and calls searchApi method with input value of the user
@@ -65,7 +68,7 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { shows, searchValue, error } = this.state;
+    const { shows, searchValue, error, loading } = this.state;
     const genres = this.getGenres();
     return (
       <Container>
@@ -88,7 +91,7 @@ class Dashboard extends Component {
             <Genre type={genre} shows={shows} key={`Genre-${genre}`} />
           ))
         ) : (
-          <h2>{error ? ERR_MSG : NO_SHOWS}</h2>
+          <h2>{loading ? LOADING : error ? ERR_MSG : NO_SHOWS}</h2>
         )}
       </Container>
     );
